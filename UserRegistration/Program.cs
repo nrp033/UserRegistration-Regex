@@ -59,6 +59,14 @@ namespace UserRegistration
                     goto Home;
                     break;
 
+                case 5:
+                    //Rule1 – minimum 8 Characters
+                    Console.Write("\n\nEnter Password :  ");
+                    UserInput = Console.ReadLine();
+                    RegexRules = "^[A-Za-z]{8,}$";
+                    Validation.validateString(UserInput, RegexRules);
+                    goto Home;
+                    break;
 
 
 
@@ -77,6 +85,7 @@ namespace UserRegistration
             Console.WriteLine("2) Validate Last Name ");
             Console.WriteLine("3) Validate Email ID");
             Console.WriteLine("4) Validate Mobile NO");
+            Console.WriteLine("5) Rule 1- 8 char Password");
 
 
             Console.WriteLine("\n\n\nPress 0 To Exit !");
