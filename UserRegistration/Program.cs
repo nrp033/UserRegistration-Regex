@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.Reflection;
 using System.Xml.Linq;
 
 namespace UserRegistration
@@ -48,6 +50,15 @@ namespace UserRegistration
                     goto Home;
                     break;
 
+                case 4:
+                 // Mobile Format -E.g. 91 9919819801 - Country code follow by space and 10 digit number
+                    Console.Write("\n\nEnter Mobile No :  ");
+                    UserInput = Console.ReadLine();
+                    RegexRules = "^[1-9]{1,3}[ ][6-9][0-9]{9}$";
+                    Validation.validateString(UserInput, RegexRules);
+                    goto Home;
+                    break;
+
 
 
 
@@ -65,6 +76,7 @@ namespace UserRegistration
             Console.WriteLine("\n\n1) Validate First Name ");
             Console.WriteLine("2) Validate Last Name ");
             Console.WriteLine("3) Validate Email ID");
+            Console.WriteLine("4) Validate Mobile NO");
 
 
             Console.WriteLine("\n\n\nPress 0 To Exit !");
