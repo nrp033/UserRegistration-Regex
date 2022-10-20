@@ -87,6 +87,16 @@ namespace UserRegistration
                     goto Home;
                     break;
 
+                case 8:
+                    //Rule1 – Exact 1 Special Charector Included  
+                    Console.Write("\n\nEnter Password :  ");
+                    UserInput = Console.ReadLine();
+                    RegexRules = "^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$" +
+                        "";
+                    Validation.validateString(UserInput, RegexRules);
+                    goto Home;
+                    break;
+
 
 
                 default:
@@ -107,6 +117,8 @@ namespace UserRegistration
             Console.WriteLine("5) Rule 1- 8 char Password");
             Console.WriteLine("6) Rule 2- Minimum 1 UpperCase");
             Console.WriteLine("7) Rule 3- Minimum 1 Number");
+            Console.WriteLine("8) Rule 4- Exact 1 Special Charector");
+
 
 
 
