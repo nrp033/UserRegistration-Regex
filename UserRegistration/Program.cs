@@ -70,10 +70,19 @@ namespace UserRegistration
                     break;
 
                 case 6:
-                    //Rule1 – minimum 8 Characters  ^(?=.*[A-Z])[a-zA-Z]{8,}$
+                    //Rule2 Minimum 2 UpperCase char 
                     Console.Write("\n\nEnter Password :  ");
                     UserInput = Console.ReadLine();
                     RegexRules = "^(?=.*[A-Z])[A-Za-z]{8,}$";
+                    Validation.validateString(UserInput, RegexRules);
+                    goto Home;
+                    break;
+
+                case 7:
+                    //Rule1 – Minimum 1 Number Included  
+                    Console.Write("\n\nEnter Password :  ");
+                    UserInput = Console.ReadLine();
+                    RegexRules = "^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
                     Validation.validateString(UserInput, RegexRules);
                     goto Home;
                     break;
@@ -97,6 +106,8 @@ namespace UserRegistration
             Console.WriteLine("4) Validate Mobile NO");
             Console.WriteLine("5) Rule 1- 8 char Password");
             Console.WriteLine("6) Rule 2- Minimum 1 UpperCase");
+            Console.WriteLine("7) Rule 3- Minimum 1 Number");
+
 
 
             Console.WriteLine("\n\n\nPress 0 To Exit !");
