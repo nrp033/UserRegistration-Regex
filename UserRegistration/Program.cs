@@ -17,6 +17,7 @@ namespace UserRegistration
             int option = Convert.ToInt32(Console.ReadLine());
             string UserInput;
             string RegexRules;
+
             switch (option)
             {
                 case 0:
@@ -68,6 +69,15 @@ namespace UserRegistration
                     goto Home;
                     break;
 
+                case 6:
+                    //Rule1 – minimum 8 Characters  ^(?=.*[A-Z])[a-zA-Z]{8,}$
+                    Console.Write("\n\nEnter Password :  ");
+                    UserInput = Console.ReadLine();
+                    RegexRules = "^(?=.*[A-Z])[A-Za-z]{8,}$";
+                    Validation.validateString(UserInput, RegexRules);
+                    goto Home;
+                    break;
+
 
 
                 default:
@@ -86,6 +96,7 @@ namespace UserRegistration
             Console.WriteLine("3) Validate Email ID");
             Console.WriteLine("4) Validate Mobile NO");
             Console.WriteLine("5) Rule 1- 8 char Password");
+            Console.WriteLine("6) Rule 2- Minimum 1 UpperCase");
 
 
             Console.WriteLine("\n\n\nPress 0 To Exit !");
