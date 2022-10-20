@@ -98,6 +98,16 @@ namespace UserRegistration
                     break;
 
 
+                case 9:
+                   // All Given Email Sample Test Are passed
+                    Console.Write("\n\nEnter Email :  ");
+                    UserInput = Console.ReadLine();
+                    RegexRules = "^[a-z]+([.+_-]?[A-Za-z0-9]+)*[@][A-Za-z0-9]+[.][A-Za-z]{2,3}([.][A-Za-z]{2,3})?$";
+                    Validation.validateString(UserInput, RegexRules);
+                    goto Home;
+                    break;
+
+
 
                 default:
                     Console.WriteLine("\nWrong Input !");
@@ -118,6 +128,7 @@ namespace UserRegistration
             Console.WriteLine("6) Rule 2- Minimum 1 UpperCase");
             Console.WriteLine("7) Rule 3- Minimum 1 Number");
             Console.WriteLine("8) Rule 4- Exact 1 Special Charector");
+            Console.WriteLine("9) Validating All Given Email Samples");
 
 
 
