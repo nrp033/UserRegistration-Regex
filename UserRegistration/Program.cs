@@ -91,8 +91,7 @@ namespace UserRegistration
                     //Rule1 – Exact 1 Special Charector Included  
                     Console.Write("\n\nEnter Password :  ");
                     UserInput = Console.ReadLine();
-                    RegexRules = "^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$" +
-                        "";
+                    RegexRules = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^!@#$%_]*[!@#$%_][^!@#$%_]*$)[a-zA-Z0-9!@#$%_]{8,}$";
                     Validation.validateString(UserInput, RegexRules);
                     goto Home;
                     break;
